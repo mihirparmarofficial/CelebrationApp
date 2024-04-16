@@ -1,0 +1,146 @@
+import React, {useState} from 'react';
+import {
+  Button,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import {FONTS} from '../common/Utils/Fonts';
+import {OtpInput} from 'react-native-otp-entry';
+
+const SignOTP = ({navigation, route}) => {
+  const {formData} = route.params;
+  return (
+    <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
+      <View style={styles.container}>
+        <Text style={styles.heading}>Logo</Text>
+        <Text style={styles.textStyle}>OTP Verification</Text>
+        <Text
+          style={{
+            textAlign: 'center',
+            justifyContent: 'center',
+            fontFamily: FONTS.Regular,
+            color: 'grey',
+            marginBottom: 20,
+          }}>
+          Enter OTP sent to +91 {formData.mobile}
+        </Text>
+        {/* <OtpInput numberOfDigits={4} onTextChange={text => console.log(text)} /> */}
+        <OtpInput
+          numberOfDigits={4}
+          focusColor="black"
+          focusStickBlinkingDuration={500}
+          //   onTextChange={text => console.log(text)}
+          onFilled={text => console.log(`OTP is ${text}`)}
+          theme={{
+            containerStyle: {
+              paddingHorizontal: 10,
+            },
+            // inputsContainerStyle: {
+            //   backgroundColor: 'red',
+            // },
+            pinCodeContainerStyle: {
+              height: 50,
+              width: 70,
+            },
+            // pinCodeTextStyle: styles.pinCodeText,
+            // focusStickStyle: styles.focusStick,
+            // focusedPinCodeContainerStyle: styles.activePinCodeContainer,
+          }}
+        />
+        <Text
+          style={{
+            textAlign: 'center',
+            marginTop: 30,
+            fontFamily: FONTS.Regular,
+            color: 'grey',
+            marginBottom: 20,
+          }}>
+          Didn't receive the OTP?
+        </Text>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate('ForgotPassword', {
+              formData,
+            })
+          }>
+          <Text
+            style={{
+              textAlign: 'center',
+              color: '#ffb605',
+              fontWeight: 'bold',
+              marginVertical: -15,
+            }}>
+            Resend
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.submitButton}
+          onPress={() =>
+            navigation.navigate('BTab', {
+              formData,
+            })
+          }>
+          <Text style={{fontSize: 16, color: 'white', fontWeight: 'bold'}}>
+            Verify OTP
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
+  );
+};
+
+export default SignOTP;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 15,
+  },
+  heading: {
+    lineHeight: 41.15,
+    fontSize: 34,
+    fontFamily: FONTS.Regular,
+    textAlign: 'center',
+    fontWeight: 'bold',
+    marginVertical: 50,
+    color: '#ffb605',
+  },
+  textStyle: {
+    textAlign: 'center',
+    fontFamily: FONTS.Regular,
+    fontSize: 20,
+    lineHeight: 24,
+    marginVertical: 10,
+    fontWeight: 'bold',
+  },
+  inputStyle: {
+    height: 44,
+    padding: 10,
+    borderColor: '#C5C5C5',
+    borderWidth: 1.3,
+    borderRadius: 10,
+    color: 'black',
+    fontFamily: FONTS.Regular,
+  },
+  inputText: {
+    textAlign: 'left',
+    fontFamily: FONTS.Regular,
+    fontSize: 14,
+
+    marginTop: 20,
+    marginBottom: 5,
+  },
+  submitButton: {
+    paddingVertical: 13,
+    marginTop: 30,
+    backgroundColor: '#ffb605',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
+    fontFamily: FONTS.Regular,
+  },
+});
