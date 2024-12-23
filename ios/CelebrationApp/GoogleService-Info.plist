@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>370331788490-ic4f28r9h1qjk6ed0fhkllrnjvn14c0f.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.370331788490-ic4f28r9h1qjk6ed0fhkllrnjvn14c0f</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>370331788490-p46nga0d779jri2g16e0u62i4ma2reki.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBOpwE_Q8sAvHTtegxhb5AxHY0L2gDnVWg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>370331788490</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.reactjs.native.example.CelebrationApp</string>
+	<key>PROJECT_ID</key>
+	<string>celebrationapp-7e2fc</string>
+	<key>STORAGE_BUCKET</key>
+	<string>celebrationapp-7e2fc.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:370331788490:ios:10b88d07efefa94b168033</string>
+</dict>
+</plist>

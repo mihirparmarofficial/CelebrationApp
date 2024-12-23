@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "370331788490",
+    "project_id": "celebrationapp-7e2fc",
+    "storage_bucket": "celebrationapp-7e2fc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370331788490:android:d86fd132c1a92b59168033",
+        "android_client_info": {
+          "package_name": "com.celebrationapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "370331788490-p46nga0d779jri2g16e0u62i4ma2reki.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.celebrationapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "370331788490-do6uq5n03g4r7nclmau3algpo4qcp7re.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8cQO-cMCGGHQLPxwrd8aknU1BEXB9hIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "370331788490-do6uq5n03g4r7nclmau3algpo4qcp7re.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "370331788490-ic4f28r9h1qjk6ed0fhkllrnjvn14c0f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.CelebrationApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
