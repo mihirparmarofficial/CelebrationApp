@@ -84,19 +84,19 @@ const HomeScreen = ({ navigation }) => {
     },
     [setFilteredData, setModalVisible]
   );
-  useEffect(() => {
-    const backAction = () => {
-      BackHandler.exitApp();
-      return true;
-    };
+  // useEffect(() => {
+  //   const backAction = () => {
+  //     BackHandler.exitApp();
+  //     return true;
+  //   };
 
-    const backHandler = BackHandler.addEventListener(
-      "hardwareBackPress",
-      backAction
-    );
+  //   const backHandler = BackHandler.addEventListener(
+  //     "hardwareBackPress",
+  //     backAction
+  //   );
 
-    return () => backHandler.remove();
-  }, []);
+  //   return () => backHandler.remove();
+  // }, []);
 
   const [formData, setFormData] = useState({
     search: "",

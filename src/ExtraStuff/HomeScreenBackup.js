@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from "react";
 import {
   Dimensions,
   FlatList,
@@ -13,30 +13,30 @@ import {
   TouchableWithoutFeedback,
   Modal,
   Keyboard,
-} from 'react-native';
-import { FONTS } from '../common/Utils/Fonts';
-import { BackHandler, Platform } from 'react-native';
-import { RFValue } from 'react-native-responsive-fontsize';
+} from "react-native";
+import { FONTS } from "../common/Utils/Fonts";
+import { BackHandler, Platform } from "react-native";
+import { RFValue } from "react-native-responsive-fontsize";
 import {
   AllCategoryData,
   AllData,
   CategoryData,
   SubCategoryData,
   TrendingData,
-} from '../common/Utils/Data';
-import { SCREENS } from '../common/Utils/Screens';
+} from "../common/Utils/Data";
+import { SCREENS } from "../common/Utils/Screens";
 
-const { width, height } = Dimensions.get('screen');
+const { width, height } = Dimensions.get("screen");
 const ITEM_WIDTH = width * 0.37;
 const ITEM_HEIGHT = ITEM_WIDTH * 1.2;
 const TextInputHeight = height * 0.048;
 
 const HomeScreen = ({ navigation }) => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [filteredData, setFilteredData] = useState([]);
   const [isModalVisible, setModalVisible] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState("");
   // const [filteredData, setFilteredData] = useState([]);
   // const handleSearch = useCallback(
   //   (text) => {
@@ -71,22 +71,23 @@ const HomeScreen = ({ navigation }) => {
       setFilteredData([]);
     }
   };
-  useEffect(() => {
-    const backAction = () => {
-      BackHandler.exitApp();
-      return true;
-    };
+  // useEffect(() => {
+  //   const backAction = () => {
+  //     BackHandler.exitApp();
+  //     return true;
+  //   };
 
-    const backHandler = BackHandler.addEventListener(
-      'hardwareBackPress',
-      backAction
-    );
+  //   const backHandler = BackHandler.addEventListener(
+  //     "hardwareBackPress",
+  //     backAction
+  //   );
 
-    return () => backHandler.remove();
-  }, []);
+  //   return () => backHandler.remove();
+  //   // return () => backHandler.remove("hardwareBackPress");
+  // }, []);
 
   const [formData, setFormData] = useState({
-    search: '',
+    search: "",
   });
   const [select, setSelect] = useState(1);
 
@@ -133,7 +134,7 @@ const HomeScreen = ({ navigation }) => {
           borderRadius: 15,
           borderColor: COLORS.BorderColor,
           marginEnd: 10,
-          alignItems: 'center',
+          alignItems: "center",
           backgroundColor: COLORS.White,
           marginTop: 5,
           width: ITEM_WIDTH,
@@ -162,11 +163,11 @@ const HomeScreen = ({ navigation }) => {
         </Text> */}
         <View
           style={{
-            alignItems: 'center',
-            justifyContent: 'center',
+            alignItems: "center",
+            justifyContent: "center",
             // backgroundColor: COLORS.Red,
             flex: 1,
-            width: '100%',
+            width: "100%",
             borderRadius: 15,
             borderTopLeftRadius: 0,
             borderTopRightRadius: 0,
@@ -183,15 +184,15 @@ const HomeScreen = ({ navigation }) => {
       <TouchableOpacity
         activeOpacity={0.7}
         style={{
-          flexDirection: 'row',
+          flexDirection: "row",
           // marginStart: 2,
           // marginEnd: 13,
           marginBottom: 10,
           paddingHorizontal: 12,
           // backgroundColor: COLORS.Green,
           // width: '100%',
-          alignItems: 'center',
-          justifyContent: 'center',
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
         <Image
@@ -200,7 +201,7 @@ const HomeScreen = ({ navigation }) => {
             width: ITEM_WIDTH * 0.73,
             // height: 105,
             // width: 105,
-            alignItems: 'flex-start',
+            alignItems: "flex-start",
             borderRadius: 10,
           }}
           source={item.img}
@@ -211,8 +212,8 @@ const HomeScreen = ({ navigation }) => {
             height: ITEM_HEIGHT * 0.5,
             // height: '85.5%',
             borderWidth: 1,
-            marginTop: 'auto',
-            marginBottom: 'auto',
+            marginTop: "auto",
+            marginBottom: "auto",
             borderTopLeftRadius: 0,
             borderBottomLeftRadius: 0,
             borderLeftWidth: 0,
@@ -220,7 +221,7 @@ const HomeScreen = ({ navigation }) => {
             borderColor: COLORS.LightBorderColor,
             // borderColor: COLORS.Black,
             // borderColor: COLORS.BorderColor,
-            flexDirection: 'row',
+            flexDirection: "row",
             // alignItems: 'center',
             // paddingTop: 2,
           }}
@@ -232,10 +233,10 @@ const HomeScreen = ({ navigation }) => {
               // borderWidth: 3,
               // width: '65%',
               flex: 3,
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              paddingVertical: '4%',
-              paddingLeft: '3%',
+              flexDirection: "column",
+              justifyContent: "space-between",
+              paddingVertical: "4%",
+              paddingLeft: "3%",
               // marginTop: -2,
               // backgroundColor: COLORS.Red,
               // justifyContent: 'space-between',
@@ -254,7 +255,7 @@ const HomeScreen = ({ navigation }) => {
             >
               {item.title}
             </Text>
-            <View style={{ width: '93%' }}>
+            <View style={{ width: "93%" }}>
               <Text
                 numberOfLines={3}
                 ellipsizeMode="tail"
@@ -276,18 +277,18 @@ const HomeScreen = ({ navigation }) => {
               // borderBlockColor: 'yellow',
               // borderColor: 'yellow',
               // borderWidth: 3,
-              flexDirection: 'column',
-              justifyContent: 'space-between',
+              flexDirection: "column",
+              justifyContent: "space-between",
               // marginStart: 'auto',
               // marginEnd: '4%',
-              alignItems: 'flex-end',
+              alignItems: "flex-end",
               // marginTop: -8,
               // width: 90,
               flex: 1.2,
               // backgroundColor: COLORS.Green,
-              paddingVertical: '4%',
+              paddingVertical: "4%",
               // marginVertical: -10,
-              paddingRight: '4%',
+              paddingRight: "4%",
             }}
           >
             <Text
@@ -311,8 +312,8 @@ const HomeScreen = ({ navigation }) => {
                   borderWidth: 1,
                   borderRadius: 5,
                   // backgroundColor:COLORS.Blue,
-                  alignItems: 'center',
-                  justifyContent: 'center',
+                  alignItems: "center",
+                  justifyContent: "center",
                   padding: 5,
                 }}
               >
@@ -338,10 +339,10 @@ const HomeScreen = ({ navigation }) => {
       <View style={styles.container}>
         <View
           style={{
-            flexDirection: 'row',
+            flexDirection: "row",
             paddingHorizontal: 15,
-            alignItems: 'center',
-            justifyContent: 'space-between',
+            alignItems: "center",
+            justifyContent: "space-between",
             // backgroundColor: COLORS.Red,
           }}
         >
@@ -359,7 +360,7 @@ const HomeScreen = ({ navigation }) => {
               Logo
             </Text>
           </View>
-          <View style={{ width: 70, alignItems: 'center' }}>
+          <View style={{ width: 70, alignItems: "center" }}>
             <Text
               style={{
                 fontFamily: FONTS.SemiBold,
@@ -373,8 +374,8 @@ const HomeScreen = ({ navigation }) => {
           <View
             style={{
               width: 70,
-              justifyContent: 'flex-end',
-              alignItems: 'flex-end',
+              justifyContent: "flex-end",
+              alignItems: "flex-end",
               // backgroundColor:COLORS.Blue,
             }}
           >
@@ -413,13 +414,13 @@ const HomeScreen = ({ navigation }) => {
                 // }}
                 value={searchText}
                 onChangeText={handleSearch}
-                placeholder={'Search decoration'}
+                placeholder={"Search decoration"}
                 // onFocus={() => setModalVisible(false)}
               />
             </View>
           </View>
           {filteredData.length > 0 && (
-            <View style={{ alignItems: 'center', paddingHorizontal: 12 }}>
+            <View style={{ alignItems: "center", paddingHorizontal: 12 }}>
               <View style={styles.resultsContainer}>
                 {/* <View style={[styles.modalContent]}> */}
                 <FlatList
@@ -521,13 +522,13 @@ const HomeScreen = ({ navigation }) => {
         </Modal> */}
         {filteredData.length > 0 ? (
           <ScrollView
-            contentContainerStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.3)' }}
+            contentContainerStyle={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}
             showsVerticalScrollIndicator={false}
             // scrollEventThrottle={16}
           >
             <View
               style={{
-                flexDirection: 'row',
+                flexDirection: "row",
                 marginTop: 12,
                 paddingRight: 15,
                 paddingLeft: 15,
@@ -545,9 +546,9 @@ const HomeScreen = ({ navigation }) => {
               <TouchableOpacity
                 activeOpacity={0.7}
                 style={{
-                  textAlign: 'right',
+                  textAlign: "right",
                   color: COLORS.ThemeColor,
-                  marginLeft: 'auto',
+                  marginLeft: "auto",
                 }}
                 onPress={() =>
                   navigation.navigate(SCREENS.AllCategory, {
@@ -589,7 +590,7 @@ const HomeScreen = ({ navigation }) => {
             </View>
             <View
               style={{
-                flexDirection: 'row',
+                flexDirection: "row",
                 marginTop: 15,
                 paddingRight: 15,
                 paddingLeft: 15,
@@ -607,9 +608,9 @@ const HomeScreen = ({ navigation }) => {
               <TouchableOpacity
                 activeOpacity={0.7}
                 style={{
-                  textAlign: 'right',
+                  textAlign: "right",
                   color: COLORS.ThemeColor,
-                  marginLeft: 'auto',
+                  marginLeft: "auto",
                 }}
                 onPress={() =>
                   navigation.navigate(SCREENS.AllCategory, {
@@ -645,7 +646,7 @@ const HomeScreen = ({ navigation }) => {
           >
             <View
               style={{
-                flexDirection: 'row',
+                flexDirection: "row",
                 marginTop: 12,
                 paddingRight: 15,
                 paddingLeft: 15,
@@ -663,9 +664,9 @@ const HomeScreen = ({ navigation }) => {
               <TouchableOpacity
                 activeOpacity={0.7}
                 style={{
-                  textAlign: 'right',
+                  textAlign: "right",
                   color: COLORS.ThemeColor,
-                  marginLeft: 'auto',
+                  marginLeft: "auto",
                 }}
                 onPress={() =>
                   navigation.navigate(SCREENS.AllCategory, {
@@ -707,7 +708,7 @@ const HomeScreen = ({ navigation }) => {
             </View>
             <View
               style={{
-                flexDirection: 'row',
+                flexDirection: "row",
                 marginTop: 15,
                 paddingRight: 15,
                 paddingLeft: 15,
@@ -725,9 +726,9 @@ const HomeScreen = ({ navigation }) => {
               <TouchableOpacity
                 activeOpacity={0.7}
                 style={{
-                  textAlign: 'right',
+                  textAlign: "right",
                   color: COLORS.ThemeColor,
-                  marginLeft: 'auto',
+                  marginLeft: "auto",
                 }}
                 onPress={() =>
                   navigation.navigate(SCREENS.AllCategory, {
@@ -776,14 +777,14 @@ const styles = StyleSheet.create({
   },
   inputStyle: {
     height: TextInputHeight,
-    alignItems: 'center',
+    alignItems: "center",
     marginTop: 15,
     borderColor: COLORS.BorderColor,
     borderWidth: 1.2,
     borderRadius: 10,
     color: COLORS.Black,
     fontFamily: FONTS.Regular,
-    flexDirection: 'row',
+    flexDirection: "row",
   },
   cardTitle: {
     color: COLORS.Black,
@@ -792,27 +793,27 @@ const styles = StyleSheet.create({
   },
   modalOverlay: {
     flex: 1,
-    top: Platform.OS === 'ios' ? '17%' : '12%',
-    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+    top: Platform.OS === "ios" ? "17%" : "12%",
+    backgroundColor: "rgba(0, 0, 0, 0.3)",
   },
   modalContent: {
     maxHeight: height / 2,
     backgroundColor: COLORS.White,
-    padding: '2.5%',
+    padding: "2.5%",
     borderBottomLeftRadius: 15,
     borderBottomRightRadius: 15,
     paddingHorizontal: 12,
   },
   productItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: '2.5%',
+    flexDirection: "row",
+    alignItems: "center",
+    padding: "2.5%",
     backgroundColor: COLORS.ProductBGColor,
-    marginBottom: '1.5%',
+    marginBottom: "1.5%",
     borderRadius: 8,
   },
   productImage: {
-    width: '13%',
+    width: "13%",
     height: 50,
     borderRadius: 8,
     marginRight: 10,
@@ -844,12 +845,12 @@ const styles = StyleSheet.create({
   // shadowRadius: 3.84,
   // },
   resultsContainer: {
-    position: 'absolute',
-    width: '100%',
+    position: "absolute",
+    width: "100%",
     flex: 1,
     backgroundColor: COLORS.White,
     maxHeight: height / 2,
-    paddingVertical: '2.5%',
+    paddingVertical: "2.5%",
     borderBottomLeftRadius: 15,
     borderBottomRightRadius: 15,
     paddingHorizontal: 12,
